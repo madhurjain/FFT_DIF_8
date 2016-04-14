@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../project_fft_dif_8.srcs/sources_1/new/pkg_complex.vhd"
+vhdl xil_defaultlib  "../../../project_fft_dif_8.srcs/sources_1/new/butterfly.vhd"
+vhdl xil_defaultlib  "../../../project_fft_dif_8.srcs/sources_1/new/fft_dif_8.vhd"
+vhdl xil_defaultlib  "../../../project_fft_dif_8.srcs/sim_1/new/test_fft_8.vhd"
+
+# Do not sort compile order
+nosort
