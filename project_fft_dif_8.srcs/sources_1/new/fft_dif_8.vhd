@@ -1,6 +1,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use work.pkg_complex.ALL;
+library ieee_proposed;
+use ieee_proposed.fixed_pkg.ALL;
 
 entity fft_dif_8 is    
     Port ( 
@@ -17,11 +19,23 @@ architecture Behavioral of fft_dif_8 is
             Xk1, Xk2 : out complex   -- intermediate outputs
         ); 
     end component;
-    signal g1, g2 : complex_array_8 := (others => (0.0, 0.0));
+    signal g1, g2 : complex_array_8 := (others => (to_sfixed(0.0, 9, -6), to_sfixed(0.0, 9, -6)));
     -- twiddle/phase factor, Wk_N = e^(-j*2*Pi*k/N), N = 8
     -- Wk_N = cos(2*Pi*k/N) - jsin(2*Pi*k/N), where k = 0 to 7
-    constant Wk_N : complex_array_4 := ((1.0,0.0), (0.7071,-0.7071), (0.0,-1.0), (-0.7071,-0.7071));
+    constant Wk_N : complex_array_4 := (
+        (to_sfixed(1.0, 9, -6), to_sfixed(0.0, 9, -6)),
+        (to_sfixed(0.7071, 9, -6), to_sfixed(-0.7071, 9, -6)),
+        (to_sfixed(0.0, 9, -6), to_sfixed(-1.0, 9, -6)),
+        (to_sfixed(-0.7071, 9, -6), to_sfixed(-0.7071, 9, -6))
+    );
 begin
+
+--generate_butterfly:
+--   for <name> in <lower_limit> to <upper_limit> generate
+--      begin
+--         <statement>;
+--         <statement>;
+--   end generate;
 
 -- stage 1
 bf11:   butterfly port map(xt(0), xt(4), Wk_N(0), g1(0), g1(4));

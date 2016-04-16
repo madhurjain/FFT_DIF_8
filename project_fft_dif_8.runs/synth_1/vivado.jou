@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2015.4 (64-bit)
+# SW Build 1412921 on Wed Nov 18 09:43:45 MST 2015
+# IP Build 1412160 on Tue Nov 17 13:47:24 MST 2015
+# Start of session at: Fri Apr 15 21:56:26 2016
+# Process ID: 2144
+# Current directory: C:/Users/Mad/project_fft_dif_8/project_fft_dif_8.runs/synth_1
+# Command line: vivado.exe -log fft_dif_8.vds -mode batch -messageDb vivado.pb -notrace -source fft_dif_8.tcl
+# Log file: C:/Users/Mad/project_fft_dif_8/project_fft_dif_8.runs/synth_1/fft_dif_8.vds
+# Journal file: C:/Users/Mad/project_fft_dif_8/project_fft_dif_8.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source fft_dif_8.tcl -notrace
